@@ -20,7 +20,7 @@ useEffect(() => {
     .then(res => res.json())
     .then(data => {
       console.log("Gif", data)
-      setGifData(data.data[0].images.original.url)
+      setGifData(data.data)
     })
   }
   makeApiCall()
@@ -30,10 +30,11 @@ console.log("data", gifData)
 
   return (
     <div className="App">
-      <DisplayGif 
-      gif={gifData}
-      />
+      <div>
+        <h1>Do you say it Gif (correct) or Jiff (weird and bad)?</h1>
+        </div>
       <Form handleSubmit={handleSubmit} />
+      {gifData.length ? <DisplayGif gif={gifData}/> : null}
     </div>
   );
 }
