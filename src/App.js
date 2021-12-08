@@ -20,7 +20,7 @@ useEffect(() => {
     .then(res => res.json())
     .then(data => {
       console.log("Gif", data)
-      setGifData(data.data.url)
+      setGifData(data.data[0].images.original.url)
     })
   }
   makeApiCall()
