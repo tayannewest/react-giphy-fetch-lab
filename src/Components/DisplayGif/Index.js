@@ -1,6 +1,6 @@
 import React from "react";
 
-function DisplayGif({gif}) {
+function DisplayGif({ gif }) {
   return (
     <img src={gif} alt="a gif"/>
   )
