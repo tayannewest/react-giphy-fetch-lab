@@ -21,7 +21,7 @@ function Form(props) {
         <form onSubmit={handleSubmit}>
           <label htmlFor="gifTitle">Search</label>
           <input
-            id="movieTitle"
+            id="gifTitle"
             type="text"
             value={gifTitle}
             onChange={handleChange}

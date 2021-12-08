@@ -2,6 +2,7 @@ import './App.css';
 import React, { useEffect, useState } from 'react';
 import DisplayGif from './Components/DisplayGif/Index';
 import Form from './Components/Form/Index';
+import RandomizeGif from './Components/RandomizeGif/Index';
 
 function App() {
 const [gifData, setGifData] = useState("")
@@ -33,8 +34,9 @@ console.log("data", gifData)
       <div>
         <h1>Do you say it Gif (correct) or Jiff (weird and bad)?</h1>
         </div>
+      {gifData.length ? <DisplayGif gif={gifData}/> : <img src="https://media2.giphy.com/media/yGLA1z4KSOPxFIDTJx/giphy.gif?cid=22d1d1e2uiu2z7sc9ze5dx4x3sre7f815qdr881c8wf7syhn&rid=giphy.gif&ct=g" alt="hehehe"/>}
       <Form handleSubmit={handleSubmit} />
-      {gifData.length ? <DisplayGif gif={gifData}/> : null}
+      <button onClick = {() => <RandomizeGif/>}>Randomize!</button>
     </div>
   );
 }

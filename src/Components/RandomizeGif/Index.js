@@ -1,8 +1,9 @@
 import React from "react";
 
-function RandomizeGif({handleClick}) {
+function RandomizeGif({ gif }) {
+  console.log({gif})
   return (
-  <button onClick={handleClick}>Randomize!</button>
+    <img src={gif[0].images.original.url} alt="a random gif"/>
   )
 }
 
