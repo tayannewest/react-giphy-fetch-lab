@@ -36,6 +36,16 @@ useEffect(() => {
       })
 }, [])
 
+const randomizeGif = () => {
+  const randomUrl = "https://api.giphy.com/v1/gifs/random?api_key=JNtTLV7jU6oAluzLgocS6849UBiTHCGh&tag=&rating=pg-13"
+
+  fetch(randomUrl)
+  .then(res => res.json())
+  .then(data => {
+    setRandomData(data.data)
+  })
+}
+
 console.log("data", gifData)
 
   return (
@@ -46,9 +56,11 @@ console.log("data", gifData)
       {!!gifData.length && <DisplayGif gif={gifData}/>}
       {randomData && <RandomizeGif gif={randomData}/>}
       <Form handleSubmit={handleSubmit} />
-      <button onClick = {() => <RandomizeGif/>}>Randomize!</button>
+      <button onClick = {randomizeGif}>Randomize!</button>
     </div>
   );
 }
+
+// I don't understand what I'm missing on the randomize button, I'm still working on it but I'm just not sure what the disconnect is
 
 export default App;
